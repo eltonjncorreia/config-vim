@@ -27,17 +27,17 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+" plugin para o git 
+Plugin 'tpope/vim-fugitive'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-
-syntax enable
 
 syntax on
 
 let mapleader = " "
 
 set showcmd
-
 " show line numbers
 set number
 
@@ -60,8 +60,6 @@ set cursorline
 set showmatch
 
 filetype plugin indent on    " required
-filetype plugin on
-
 
 set encoding=utf-8
 
@@ -86,7 +84,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
-"let g:go_fmt_command = "goimports"    # Run goimports along gofmt on each save     
+"let g:go_fmt_command = 'goimports'   # Run goimports along gofmt on each save     
 "let g:go_auto_type_info = 1           # Automatically get signature/type info for object under cursor     
 au filetype go inoremap <buffer> . .<C-x><C-o>
 
@@ -103,6 +101,8 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+set tags=tags
 
 " If you want :UltiSnipsEdit to split your window.
 " let g:UltiSnipsEditSplit="vertical"
